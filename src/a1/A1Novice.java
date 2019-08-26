@@ -27,6 +27,9 @@ public class A1Novice {
 			
 			//declaring a variable to keep track of the customer's total cost
 			double cTotal=0;
+			
+			
+		
 			//for loop to iterate through next input statements based on how many items the customer bought
 			for (int k=0; k<numItems; k++) {
 				//reading in the quanitity of this item
@@ -39,7 +42,8 @@ public class A1Novice {
 				cTotal+=(iPrice*qItem);
 				
 			}
-			System.out.println(fInit+". "+ lName+": "+cTotal);
+			System.out.print(fInit+". "+ lName+": "); 
+			System.out.printf("%n$%.2f \n", cTotal);
 			
 		}
 		

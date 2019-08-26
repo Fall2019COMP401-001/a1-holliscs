@@ -43,7 +43,7 @@ public class A1Novice {
 				
 			}
 			System.out.print(fInit+". "+ lName+": "); 
-			System.out.printf("$%.2f \n", cTotal);
+			System.out.printf("%.2f \n", cTotal);
 			
 		}
 		

@@ -91,7 +91,7 @@ public class A1Adept {
 				}
 			}
 			
-		double avg=computeAvg(amtSpent);
+		String avg=""+computeAvg(amtSpent);
 		System.out.println("Biggest: "+ String.format("%.2f", greatest)+ " ("+ gAmount+")");
 		System.out.println("Smallest: "+ String.format("%.2f",lowest)+" ("+ lAmount+")");
 		System.out.println("Average: "+ String.format("%.2f", avg));

@@ -82,6 +82,10 @@ public class A1Adept {
 					gAmount=amtSpent[c][1];
 				}
 			}
+			//System.out.println(gAmount);
+			double gDouble=Double.parseDouble(gAmount);
+			//System.out.printf("%.2f", gDouble);
+			//String gOut=String.format("%.2f", gAmount);
 		//calling function to see who spent the least
 			String lowest=lowestSpender(amtSpent);
 			String lAmount="";
@@ -90,11 +94,21 @@ public class A1Adept {
 					lAmount=amtSpent[f][1];
 				}
 			}
+			double lDouble=Double.parseDouble(lAmount);
 			
-		String avg=""+computeAvg(amtSpent);
-		System.out.println("Biggest: "+ String.format("%.2f", greatest)+ " ("+ gAmount+")");
-		System.out.println("Smallest: "+ String.format("%.2f",lowest)+" ("+ lAmount+")");
-		System.out.println("Average: "+ String.format("%.2f", avg));
+			//String lOut=String.format("%.2f", lAmount);
+			
+		double avg=computeAvg(amtSpent);
+		
+		//String aOut=String.format("%.2f", avg);
+		System.out.print("Biggest: "+ greatest+ " (");
+		System.out.printf("%.2f", gDouble);
+		System.out.println(")");
+		System.out.print("Smallest: "+ lowest+" (");
+		System.out.printf("%.2f", lDouble);
+		System.out.println(")");
+		System.out.print("Average: ");
+		System.out.printf("%.2f", avg);
 	}
 	
 	

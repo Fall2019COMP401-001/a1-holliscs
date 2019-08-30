@@ -108,7 +108,7 @@ public class A1Adept {
 		System.out.printf("%.2f", lDouble);
 		System.out.println(")");
 		System.out.print("Average: ");
-		System.out.printf("%.2f", avg);
+		System.out.printf("%.2f \n", avg);
 	}
 	
 	

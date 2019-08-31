@@ -59,12 +59,12 @@ public class A1Jedi {
 						qCount=Integer.parseInt(storeItems[p][1]);
 						qCount+=qItem;
 						storeItems[p][1]=""+qCount;
-						//need to only do this  once per customer
+						//need to only do this  once per customer DOENS'T WORK
 						if(!cCounted) {
+							cCounted=true;
 							cCount=Integer.parseInt(storeItems[p][2]);
 							cCount++;
 							storeItems[p][2]=""+cCount;
-							cCounted=true;
 						}
 						
 					}

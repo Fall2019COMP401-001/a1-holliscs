@@ -58,7 +58,7 @@ public class A1Jedi {
 				//reading in the name of the item
 				String iName=scan.next();
 				customerCount[j][0]=iName;
-				cCounted=false;
+				//cCounted=false;
 				//finding the cost of the listed item
 				for(int p=0; p< storeItems.length; p++) {
 					int cCount;
@@ -68,7 +68,13 @@ public class A1Jedi {
 						qCount+=qItem;
 						storeItems[p][1]=""+qCount;
 						//need to only do this  once per customer 
-						if(customerCount[j][1].equals("f")) {
+						int iIndex=0;
+						for(int v=0; v<customerCount.length; v++) {
+							if(customerCount[v][0].equals(iName)) {
+								iIndex=v;
+							}
+						}
+						if(customerCount[iIndex][1].equals("f")) {
 							cCount=Integer.parseInt(storeItems[p][2]);
 							cCount++;
 							storeItems[p][2]=""+cCount;

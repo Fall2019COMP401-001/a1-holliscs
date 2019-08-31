@@ -34,6 +34,7 @@ public class A1Jedi {
 		for (int k=0; k<numCust; k++) {
 			// we don't really care about the names just have to read them in 
 			//reading in the first name of the customer
+			boolean cCounted=false;
 			String fName=scan.next();
 			
 			//reading in last name of the customer
@@ -58,9 +59,14 @@ public class A1Jedi {
 						qCount=Integer.parseInt(storeItems[p][1]);
 						qCount+=qItem;
 						storeItems[p][1]=""+qCount;
-						cCount=Integer.parseInt(storeItems[p][2]);
-						cCount++;
-						storeItems[p][2]=""+cCount;
+						//need to only do this  once per customer
+						if(!cCounted) {
+							cCount=Integer.parseInt(storeItems[p][2]);
+							cCount++;
+							storeItems[p][2]=""+cCount;
+							cCounted=true;
+						}
+						
 					}
 					
 				}

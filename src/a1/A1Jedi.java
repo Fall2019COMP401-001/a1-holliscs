@@ -74,6 +74,7 @@ public class A1Jedi {
 				System.out.println(storeItems[d][2]+" customers bought "+ storeItems[d][1]+ " "+ storeItems[d][0]);
 			}
 		}
+		System.out.println("");
 		
 	}
 }

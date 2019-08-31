@@ -50,7 +50,7 @@ public class A1Jedi {
 				//reading in the name of the item
 				String iName=scan.next();
 				
-				
+				cCounted=false;
 				//finding the cost of the listed item
 				for(int p=0; p< storeItems.length; p++) {
 					int cCount;

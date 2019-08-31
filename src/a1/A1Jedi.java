@@ -53,9 +53,11 @@ public class A1Jedi {
 				//finding the cost of the listed item
 				for(int p=0; p< storeItems.length; p++) {
 					int cCount;
+					int qCount;
 					if(storeItems[p][0].contentEquals(iName)) {
-						//parsing the cost to an integer var so we can do math
-						storeItems[p][1]=""+qItem;
+						qCount=Integer.parseInt(storeItems[p][1]);
+						qCount+=qItem;
+						storeItems[p][1]=""+qCount;
 						cCount=Integer.parseInt(storeItems[p][2]);
 						cCount++;
 						storeItems[p][2]=""+cCount;

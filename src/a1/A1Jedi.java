@@ -30,11 +30,11 @@ public class A1Jedi {
 			
 		//reading in the number of customers
 		int numCust=scan.nextInt();
-		
+		boolean cCounted;
 		for (int k=0; k<numCust; k++) {
 			// we don't really care about the names just have to read them in 
 			//reading in the first name of the customer
-			boolean cCounted=false;
+			cCounted=false;
 			String fName=scan.next();
 			
 			//reading in last name of the customer

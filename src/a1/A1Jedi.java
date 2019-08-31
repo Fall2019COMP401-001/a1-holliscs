@@ -13,7 +13,7 @@ public class A1Jedi {
 		
 		//declaring a 2d array to keep track of the items of the store & when they're bought & by how many customers
 		String[][] storeItems = new String[iStore][3];
-		
+		 
 		//getting the names and prices of each item in the store
 		for(int i=0; i<iStore; i++) {
 					
@@ -30,6 +30,8 @@ public class A1Jedi {
 			
 		//reading in the number of customers
 		int numCust=scan.nextInt();
+		//String[][] customerCount=new String[numCust][3];
+		
 		boolean cCounted;
 		for (int k=0; k<numCust; k++) {
 			// we don't really care about the names just have to read them in 
@@ -40,16 +42,22 @@ public class A1Jedi {
 			//reading in last name of the customer
 			String lName=scan.next();
 			
+			
 			//reading in the number of items that the customer bought
 			int numItems=scan.nextInt();
 			
+			//keeps track of item names and if its true or not
+			String[][] customerCount=new String[numItems][2];
+			for(int e=0; e<customerCount.length; e++) {
+				customerCount[e][1]="f";
+			}
 			//for loop to iterate through next input statements based on how many items the customer bought
 			for (int j=0; j<numItems; j++) {
 				//reading in the quantity of this item
 				int qItem=scan.nextInt();
 				//reading in the name of the item
 				String iName=scan.next();
-				
+				customerCount[j][0]=iName;
 				cCounted=false;
 				//finding the cost of the listed item
 				for(int p=0; p< storeItems.length; p++) {
@@ -59,12 +67,12 @@ public class A1Jedi {
 						qCount=Integer.parseInt(storeItems[p][1]);
 						qCount+=qItem;
 						storeItems[p][1]=""+qCount;
-						//need to only do this  once per customer DOENS'T WORK
-						if(!cCounted) {
-							cCounted=true;
+						//need to only do this  once per customer 
+						if(customerCount[j][1].equals("f")) {
 							cCount=Integer.parseInt(storeItems[p][2]);
 							cCount++;
 							storeItems[p][2]=""+cCount;
+							customerCount[j][1]="t";
 						}
 						
 					}

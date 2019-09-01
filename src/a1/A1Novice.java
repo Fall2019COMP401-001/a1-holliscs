@@ -28,21 +28,22 @@ public class A1Novice {
 			//declaring a variable to keep track of the customer's total cost
 			double cTotal=0;
 			
-			
-		
 			//for loop to iterate through next input statements based on how many items the customer bought
 			for (int k=0; k<numItems; k++) {
-				//reading in the quanitity of this item
+				//reading in how many of this item the customer bought
 				int qItem=scan.nextInt();
-				//reading in the name of the item
+				//reading in the name of the item, don't really need value for later tho
 				String iName=scan.next();
 				//reading in item price
 				double iPrice=scan.nextDouble();
 				
+				//computing the total cost for this item by multiplying price by quantitiy
 				cTotal+=(iPrice*qItem);
 				
 			}
+			//output statements
 			System.out.print(fInit+". "+ lName+": "); 
+			//using the printf to format the output to 2 decimal places
 			System.out.printf("%.2f \n", cTotal);
 			
 		}

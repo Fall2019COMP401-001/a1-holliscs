@@ -48,16 +48,30 @@ public class A1Jedi {
 			
 			String[][] custCount=new String[numItems][2];
 			for(int l=0;l<custCount.length;l++) {
+				custCount[l][0]="";
 				custCount[l][1]="f";
 			}
-			
+			int ii=0;
 			//for loop to iterate through next input statements based on how many items the customer bought
 			for (int j=0; j<numItems; j++) {
+				
 				//reading in the quantity of this item
 				int qItem=scan.nextInt();
 				//reading in the name of the item
 				String iName=scan.next();
-				custCount[j][0]=iName;
+				boolean found=false;
+				for(int b=0; b<custCount.length;b++) {
+					if(custCount[b][0].equals(iName)) {
+						found=true;
+						ii=b;
+						continue;
+					}
+				}
+				if(!found) {
+					custCount[j][0]=iName;
+					ii=j;
+				}
+				
 				//finding the cost of the listed item
 				int cCount=0;
 				int itemIndex=0;
@@ -74,9 +88,9 @@ public class A1Jedi {
 					}
 				}
 				
-				if(custCount[j][1].equals("f")) {
+				if(custCount[ii][1].equals("f")) {
 					cCount++;
-					custCount[j][1]="t";
+					custCount[ii][1]="t";
 					storeItems[itemIndex][2]=""+cCount;
 				}
 					

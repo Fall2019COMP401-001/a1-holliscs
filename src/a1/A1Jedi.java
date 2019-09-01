@@ -36,7 +36,7 @@ public class A1Jedi {
 		for (int k=0; k<numCust; k++) {
 			// we don't really care about the names just have to read them in 
 			//reading in the first name of the customer
-			cCounted=false;
+			
 			String fName=scan.next();
 			
 			//reading in last name of the customer
@@ -46,43 +46,38 @@ public class A1Jedi {
 			//reading in the number of items that the customer bought
 			int numItems=scan.nextInt();
 			
-			//keeps track of item names and if its true or not
-			String[][] customerCount=new String[numItems][2];
-			for(int e=0; e<customerCount.length; e++) {
-				customerCount[e][1]="f";
+			String[][] custCount=new String[numItems][2];
+			for(int l=0;l<custCount.length;l++) {
+				custCount[l][1]="f";
 			}
+			
 			//for loop to iterate through next input statements based on how many items the customer bought
 			for (int j=0; j<numItems; j++) {
 				//reading in the quantity of this item
 				int qItem=scan.nextInt();
 				//reading in the name of the item
 				String iName=scan.next();
-				customerCount[j][0]=iName;
-				//cCounted=false;
+				custCount[j][0]=iName;
 				//finding the cost of the listed item
+				int cCount=0;
+				int itemIndex=0;
 				for(int p=0; p< storeItems.length; p++) {
-					int cCount;
 					int qCount;
 					if(storeItems[p][0].contentEquals(iName)) {
+						itemIndex=p;
 						qCount=Integer.parseInt(storeItems[p][1]);
 						qCount+=qItem;
 						storeItems[p][1]=""+qCount;
 						//need to only do this  once per customer 
-						int iIndex=0;
-						for(int v=0; v<customerCount.length; v++) {
-							if(customerCount[v][0].equals(iName)) {
-								iIndex=v;
-							}
-						}
-						if(customerCount[iIndex][1].equals("f")) {
-							cCount=Integer.parseInt(storeItems[p][2]);
-							cCount++;
-							storeItems[p][2]=""+cCount;
-							customerCount[j][1]="t";
-						}
-						
+						//finding the index of the name of the item in custCount
+						cCount=Integer.parseInt(storeItems[p][2]);
 					}
-					
+				}
+				
+				if(custCount[j][1].equals("f")) {
+					cCount++;
+					custCount[j][1]="t";
+					storeItems[itemIndex][2]=""+cCount;
 				}
 					
 			}
